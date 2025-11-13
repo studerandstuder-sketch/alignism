@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alignism – Viva alinhado. Viva consciente. Viva livre.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Helvetica Neue", Arial, sans-serif;
+      background: #ffffff;
+      color: #111827;
+    }
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.9);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 16px;
+    }
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-size: 11px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .divider {
+      width: 1px;
+      height: 16px;
+      background: #d1d5db;
+    }
+    .sub {
+      font-size: 11px;
+      color: #6b7280;
+    }
+    .lang-switch {
+      font-size: 11px;
+      color: #6b7280;
+    }
+    .lang-switch a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .lang-switch a:hover {
+      text-decoration: underline;
+    }
+    main {
+      flex: 1;
+    }
+    h1 {
+      font-size: 32px;
+      margin: 0 0 12px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 12px;
+      color: #374151;
+    }
+    .section {
+      padding: 32px 16px;
+    }
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .pillars {
+      display: grid;
+      grid-template-columns: minmax(0,1fr);
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 16px 18px;
+      background: #ffffff;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .hero-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .25em;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: #4b5563;
+      margin-bottom: 12px;
+    }
+    .hero-text {
+      max-width: 560px;
+    }
+    footer {
+      border-top: 1px solid #e5e7eb;
+      font-size: 11px;
+      color: #6b7280;
+    }
+    footer .inner {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    a {
+      color: inherit;
+    }
+    @media (min-width: 768px) {
+      h1 { font-size: 40px; }
+      .pillars { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      footer .inner { flex-direction: row; justify-content: space-between; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <div class="inner flex">
+        <div class="flex" style="gap:4px; align-items: center;">
+          <span class="tag">ALIGNISM</span>
+          <span class="divider"></span>
+          <span class="sub">Viva alinhado. Viva consciente. Viva livre.</span>
+        </div>
+        <div class="lang-switch">
+          <a href="/">EN</a> · <a href="/fr">FR</a> · <strong>PT</strong>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-inner hero-text">
+          <div class="hero-tag">UMA FILOSOFIA MODERNA DE VIDA</div>
+          <h1>Alignism™</h1>
+          <div class="hero-sub">Viva alinhado. Viva consciente. Viva livre.</div>
+          <p>
+            Alignism é uma filosofia de vida moderna para quem busca clareza,
+            equilíbrio interior e liberdade, em um mundo que constantemente
+            nos afasta de nós mesmos.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="what">
+        <div class="section-inner">
+          <h2>O que é Alignism?</h2>
+          <p>
+            Alignism é uma filosofia de vida moderna fundada por Sébastien Studer.
+            Ela ensina como viver em harmonia com a sua verdade interior — com clareza,
+            intenção e liberdade — em vez de ser conduzido por expectativas, ruídos
+            e comparações.
+          </p>
+          <p>
+            Não se trata de perfeição. Trata-se de coerência.
+            De construir uma vida calma, coerente e guiada por você mesmo.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="pillars">
+        <div class="section-inner">
+          <h2>Os 5 pilares do Alignism</h2>
+
+          <div class="pillars">
+
+            <div class="card">
+              <h3>Alinhamento interior</h3>
+              <p>
+                Compreender seus instintos, emoções, medos e intuição.
+                Enxergar-se com clareza e deixar que seus sinais internos
+                guiem suas decisões.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Qualidade de vida</h3>
+              <p>
+                Menos estresse, mais energia. Melhor sono, melhor saúde,
+                melhores escolhas. O verdadeiro luxo não é desempenho —
+                é paz interior.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Amor lúcido</h3>
+              <p>
+                Amar sem se perder. Construir relações honestas, vivas e equilibradas —
+                com parceiros, filhos, família e amigos.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Liberdade moderna</h3>
+              <p>
+                Usar dinheiro e tecnologia com consciência. Trabalhar de forma inteligente,
+                não infinita. Permitir que a IA ajude sem deixar que ela substitua
+                sua humanidade.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Liberdade de movimento</h3>
+              <p>
+                Não pertencer a um único país ou sistema. Construir opções,
+                mobilidade e cidadania global para que sua vida não fique
+                presa a uma só decisão ou fronteira.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="founder">
+        <div class="section-inner">
+          <h2>Sobre o fundador</h2>
+          <p>
+            Sébastien Studer é autor, empreendedor e cidadão do mundo.
+            Ele escreve sobre instinto, amor, dinheiro, saúde, IA, mobilidade
+            e a arte de construir uma vida que seja pacífica e fiel a si mesmo.
+          </p>
+          <p>
+            Alignism é a síntese dessa jornada — uma filosofia nascida
+            da experiência vivida, não da teoria.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="inner">
+        <span>© 2025 Alignism™. Todos os direitos reservados.</span>
+        <span>
+          Fundado por
+          <a href="https://sebastienstuder.com" target="_blank" rel="noreferrer">
+            Sébastien Studer
+          </a>.
+        </span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
