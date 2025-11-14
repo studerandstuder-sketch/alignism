@@ -5,140 +5,281 @@
   <title>Alignism – Vis aligné. Vis conscient. Vis libre.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Helvetica Neue", Arial, sans-serif;
-      background: #ffffff;
-      color: #111827;
-    }
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(8px);
-      background: rgba(255,255,255,0.9);
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .inner {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 12px 16px;
-    }
-    .flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .tag {
-      font-size: 11px;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      color: #6b7280;
-    }
-    .divider {
-      width: 1px;
-      height: 16px;
-      background: #d1d5db;
-    }
-    .sub {
-      font-size: 11px;
-      color: #6b7280;
-    }
-    .lang-switch {
-      font-size: 11px;
-      color: #6b7280;
-    }
-    .lang-switch a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .lang-switch a:hover {
-      text-decoration: underline;
-    }
-    main {
-      flex: 1;
-    }
-    h1 {
-      font-size: 32px;
-      margin: 0 0 12px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-    }
-    h2 {
-      font-size: 22px;
-      margin: 0 0 12px;
-      font-weight: 600;
-    }
-    p {
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 0 0 12px;
-      color: #374151;
-    }
-    .section {
-      padding: 32px 16px;
-    }
-    .section-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .pillars {
-      display: grid;
-      grid-template-columns: minmax(0,1fr);
-      gap: 16px;
-    }
-    .card {
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 16px 18px;
-      background: #ffffff;
-    }
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
-      font-weight: 600;
-    }
-    .hero-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .25em;
-      color: #6b7280;
-      margin-bottom: 8px;
-    }
-    .hero-sub {
-      font-size: 18px;
-      color: #4b5563;
-      margin-bottom: 12px;
-    }
-    .hero-text {
-      max-width: 560px;
-    }
-    footer {
-      border-top: 1px solid #e5e7eb;
-      font-size: 11px;
-      color: #6b7280;
-    }
-    footer .inner {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    a {
-      color: inherit;
-    }
-    @media (min-width: 768px) {
-      h1 { font-size: 40px; }
-      .pillars { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      footer .inner { flex-direction: row; justify-content: space-between; align-items: center; }
-    }
+/* Subtle background pattern */
+body {
+  background:
+    radial-gradient(circle at top left, rgba(251,191,36,0.12), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(15,23,42,0.08), transparent 55%),
+    #ffffff;
+}
+
+/* Hero layout with visual block */
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+/* Card around the image */
+.hero-visual {
+  position: relative;
+  width: 360px;
+  aspect-ratio: 4 / 3;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #111827, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glow effect behind */
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(251,191,36,0.18), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(56,189,248,0.18), transparent 60%);
+  opacity: 0.7;
+}
+
+/* The road image */
+.hero-visual img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-visual {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+/* Section title underline accent */
+.section-inner h2 {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.section-inner h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 52px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #000000, #d1d5db);
+}
+
+/* Pillar cards: subtle top border accent */
+.card {
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 18px rgba(15,23,42,0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+/* top accent line */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 40%;
+  height: 2px;
+  background: linear-gradient(90deg, #000000, #d1d5db);
+}
+
+/* Pillar card layout (image + text) */
+.pillars .card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px 16px;
+  background: #ffffff;
+}
+
+.card-image {
+  flex: 0 0 68px;
+}
+
+.card-image img {
+  width: 68px;
+  height: 68px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1);
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Founder layout */
+.founder-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.founder-photo {
+  flex: 0 0 auto;
+}
+
+.founder-photo img {
+  width: 150px;
+  max-width: 40vw;
+  border-radius: 18px;
+  display: block;
+  filter: grayscale(1);
+  box-shadow: 0 10px 24px rgba(15,23,42,0.18);
+}
+
+.founder-text {
+  flex: 1 1 240px;
+}
+
+/* On mobile, keep hero layout stacked */
+@media (max-width: 767px) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .founder-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.lang-switch {
+  font-size: 11px;
+  color: #6b7280;
+}
+.lang-switch a {
+  color: inherit;
+  text-decoration: none;
+}
+.lang-switch a:hover {
+  text-decoration: underline;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #111827;
+}
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.9);
+  border-bottom: 1px solid #e5e7eb;
+}
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-size: 11px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+.divider {
+  width: 1px;
+  height: 16px;
+  background: #d1d5db;
+}
+.sub {
+  font-size: 11px;
+  color: #6b7280;
+}
+main {
+  flex: 1;
+}
+h1 {
+  font-size: 32px;
+  margin: 0 0 12px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+h2 {
+  font-size: 22px;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+  color: #374151;
+}
+.section {
+  padding: 32px 16px;
+}
+.section-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.pillars {
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  gap: 16px;
+}
+footer {
+  border-top: 1px solid #e5e7eb;
+  font-size: 11px;
+  color: #6b7280;
+}
+footer .inner {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+@media (min-width: 768px) {
+  h1 { font-size: 40px; }
+  .pillars { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  footer .inner { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+a {
+  color: inherit;
+}
   </style>
 </head>
 <body>
@@ -150,22 +291,36 @@
           <span class="divider"></span>
           <span class="sub">Vis aligné. Vis conscient. Vis libre.</span>
         </div>
-<div class="lang-switch">
-  <a href="/">EN</a> · <strong>FR</strong> · <a href="/pt">PT</a>
-</div>
+        <div class="lang-switch">
+          <a href="/">EN</a> · <strong>FR</strong> · <a href="/pt">PT</a>
+        </div>
       </div>
     </header>
 
     <main>
       <section class="section">
-        <div class="section-inner hero-text">
-          <div class="hero-tag">UNE PHILOSOPHIE DE VIE MODERNE</div>
-          <h1>Alignism™</h1>
-          <div class="hero-sub">Vis aligné. Vis conscient. Vis libre.</div>
-          <p>
-            L’Alignism est une philosophie de vie moderne pour celles et ceux qui recherchent
-            la clarté, l’équilibre intérieur et la liberté, dans un monde qui les éloigne en permanence d’eux-mêmes.
-          </p>
+        <div class="section-inner">
+          <div class="hero-layout">
+            <!-- Left: text -->
+            <div class="hero-text">
+              <div class="hero-tag">UNE PHILOSOPHIE DE VIE MODERNE</div>
+              <h1>Alignism™</h1>
+              <div class="hero-sub">Vis aligné. Vis conscient. Vis libre.</div>
+              <p>
+                Alignism est une philosophie moderne pour celles et ceux qui veulent plus de clarté,
+                d’équilibre intérieur et de liberté dans un monde qui les éloigne sans cesse d’eux-mêmes.
+              </p>
+              <p>
+                Elle t’aide à réaligner ton corps, ton temps, ton argent et tes relations avec ce que tu veux
+                vraiment — et non avec ce que le monde te dit de poursuivre.
+              </p>
+            </div>
+
+            <!-- Right: visual block with road image -->
+            <div class="hero-visual">
+              <img src="/pillar-freedom.jpg" alt="Alignism – le chemin à suivre" loading="lazy" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -173,57 +328,85 @@
         <div class="section-inner">
           <h2>Qu’est-ce que l’Alignism&nbsp;?</h2>
           <p>
-            L’Alignism est une philosophie de vie moderne fondée par Sébastien Studer.
-            Elle enseigne comment vivre en harmonie avec sa vérité intérieure — avec clarté,
-            intention et liberté — plutôt que de se laisser conduire par les attentes, le bruit et la comparaison.
+            Alignism est une philosophie de vie moderne fondée par Sébastien Studer. Elle enseigne
+            comment vivre en harmonie avec ta vérité intérieure — avec clarté, intention et liberté —
+            plutôt que d’être poussé par les attentes, le bruit et la comparaison.
           </p>
           <p>
-            Il ne s’agit pas de perfection. Il s’agit de cohérence.
-            De construire une vie qui soit calme, cohérente et guidée par soi-même.
+            Il ne s’agit pas de perfection, mais de cohérence. De construire une vie qui paraît
+            calme, pleine de sens et vraiment dirigée par toi.
           </p>
         </div>
       </section>
 
       <section class="section" id="pillars">
         <div class="section-inner">
-          <h2>Les 5 piliers de l’Alignism</h2>
+          <h2>Les 5 Piliers de l’Alignism</h2>
           <div class="pillars">
             <div class="card">
-              <h3>Alignement intérieur</h3>
-              <p>
-                Comprendre ses instincts, ses émotions, ses peurs et son intuition.
-                Se voir clairement et laisser ses signaux intérieurs guider ses décisions.
-              </p>
+              <div class="card-image">
+                <img src="/pillar-inner.jpg" alt="Alignement intérieur" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h3>Alignement intérieur</h3>
+                <p>
+                  Comprendre tes instincts, tes émotions, tes peurs et ton intuition.
+                  Te voir avec lucidité et laisser tes signaux intérieurs guider tes décisions.
+                </p>
+              </div>
             </div>
+
             <div class="card">
-              <h3>Qualité de vie</h3>
-              <p>
-                Moins de stress, plus d’énergie. Un meilleur sommeil, une meilleure santé,
-                de meilleurs choix. Le vrai luxe, ce n’est pas la performance,
-                c’est la paix intérieure.
-              </p>
+              <div class="card-image">
+                <img src="/pillar-quality.jpg" alt="Qualité de vie" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h3>Qualité de vie</h3>
+                <p>
+                  Moins de stress, plus d’énergie. Un meilleur sommeil, une meilleure santé,
+                  de meilleurs choix. Le vrai luxe, c’est la paix intérieure, pas la performance.
+                </p>
+              </div>
             </div>
+
             <div class="card">
-              <h3>Amour lucide</h3>
-              <p>
-                Aimer sans se perdre. Construire des relations honnêtes, vivantes et équilibrées —
-                avec son partenaire, ses enfants, sa famille, ses amis.
-              </p>
+              <div class="card-image">
+                <img src="/pillar-love.jpg" alt="Amour lucide" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h3>Amour lucide</h3>
+                <p>
+                  Aimer sans te perdre. Construire des relations honnêtes, vivantes et équilibrées —
+                  avec ton partenaire, tes enfants, ta famille et tes amis.
+                </p>
+              </div>
             </div>
+
             <div class="card">
-              <h3>Liberté moderne</h3>
-              <p>
-                Utiliser l’argent et la technologie en conscience. Travailler intelligemment,
-                pas sans fin. Laisser l’IA nous assister sans qu’elle remplace notre humanité.
-              </p>
+              <div class="card-image">
+                <img src="/pillar-tech.jpg" alt="Liberté moderne" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h3>Liberté moderne</h3>
+                <p>
+                  Utiliser l’argent et la technologie de manière consciente. Travailler intelligemment,
+                  pas sans fin. Laisser l’IA t’aider sans la laisser remplacer ton humanité.
+                </p>
+              </div>
             </div>
+
             <div class="card">
-              <h3>Liberté de mouvement</h3>
-              <p>
-                Ne pas appartenir à un seul pays ou un seul système. Construire des options,
-                de la mobilité et une citoyenneté globale pour que sa vie ne soit pas piégée
-                par une seule décision ou une seule frontière.
-              </p>
+              <div class="card-image">
+                <img src="/principles.jpg" alt="Liberté de mouvement" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <h3>Liberté de mouvement</h3>
+                <p>
+                  Ne pas appartenir à un seul pays ou système. Construire des options, de la mobilité
+                  et une citoyenneté globale pour que ta vie ne soit pas enfermée dans une seule décision
+                  ou une seule frontière.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -231,56 +414,65 @@
 
       <section class="section" id="founder">
         <div class="section-inner">
-          <h2>À propos du fondateur</h2>
-          <p>
-            Sébastien Studer est auteur, entrepreneur et citoyen du monde.
-            Il écrit sur l’instinct, l’amour, l’argent, la santé, l’IA, la mobilité et
-            l’art de construire une vie qui soit à la fois paisible et fidèle à soi-même.
-          </p>
-          <p>
-            L’Alignism est la synthèse de ce parcours — une philosophie née de l’expérience vécue, pas de la théorie.
-          </p>
+          <div class="founder-layout">
+            <div class="founder-photo">
+              <img src="/founder.jpg" alt="Sébastien Studer – fondateur de l’Alignism" loading="lazy" />
+            </div>
+            <div class="founder-text">
+              <h2>À propos du fondateur</h2>
+              <p>
+                Sébastien Studer est auteur, entrepreneur et citoyen du monde. Il écrit sur l’instinct,
+                l’amour, l’argent, la santé, l’IA, la mobilité et l’art de construire une vie qui paraît
+                paisible et juste.
+              </p>
+              <p>
+                Alignism est la synthèse de ce parcours — une philosophie née de l’expérience vécue,
+                pas de la théorie.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-      <section class="section" id="guide">
-        <div class="section-inner">
+
+    <section class="section" id="guide">
+      <div class="section-inner">
+        <div class="card" style="border-radius:20px; padding:20px 20px 18px;">
           <h2>Guide gratuit – ALIGNISM™ – Le Guide Officiel</h2>
           <p>
-            Pour ceux qui veulent aller plus loin, le guide officiel ALIGNISM™
-            est disponible gratuitement au format PDF. Il rassemble le cœur du
-            mouvement&nbsp;: le manifeste, les 12 principes de l’Alignism et la
-            définition de ce que signifie être un Aligniste.
+            Pour celles et ceux qui veulent aller plus loin, le guide officiel ALIGNISM™ est disponible
+            gratuitement en PDF. Il rassemble le cœur du mouvement&nbsp;: le Manifeste, les 12 Principes
+            d’Alignism et la définition de ce que signifie être Aligniste.
           </p>
           <p>
-            Ce n’est pas un système à suivre, mais un miroir&nbsp;— pour t’aider à
-            voir ce que tu ressens déjà&nbsp;: ton besoin de clarté, de cohérence
-            et de liberté.
+            Ce n’est pas un système à suivre, mais un miroir — pour t’aider à voir ce que tu ressens
+            déjà&nbsp;: ton besoin de clarté, de cohérence et de liberté.
           </p>
-<p style="margin-top:16px;">
-  <a
-    href="ALIGNISM-Guide-FR.pdf"
-    class="download-button"
-    style="
-      display:inline-block;
-      border-radius:999px;
-      border:1px solid #111827;
-      padding:8px 18px;
-      font-size:13px;
-      font-weight:500;
-      text-decoration:none;
-      color:#111827;
-    "
-  >
-    Télécharger le guide gratuit (PDF)
-  </a>
-</p>
-<p style="font-size:11px; color:#6b7280; margin-top:8px;">
-  PDF • ALIGNISM™ – Le Guide Officiel • par Sébastien Studer
-</p>
-
+          <p style="margin-top:16px;">
+            <a
+              href="/ALIGNISM-guide-fr.pdf"
+              class="download-button"
+              style="
+                display:inline-block;
+                border-radius:999px;
+                border:1px solid #111827;
+                padding:8px 18px;
+                font-size:13px;
+                font-weight:500;
+                text-decoration:none;
+                color:#111827;
+                background:#f9fafb;
+              "
+            >
+              Télécharger le guide gratuit (PDF)
+            </a>
+          </p>
+          <p style="font-size:11px; color:#6b7280; margin-top:8px;">
+            PDF • ALIGNISM™ – Le Guide Officiel • par Sébastien Studer
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
     <footer>
       <div class="inner">
