@@ -354,10 +354,6 @@
   </style>
 </head>
 <body>
-  <!-- Netlify backend form (hidden) -->
-  <form name="join-alignism" method="POST" data-netlify="true" hidden>
-    <input type="email" name="email" />
-  </form>
 
   <div class="page">
     <header>
@@ -437,17 +433,25 @@
           </div>
 
           <!-- Netlify email capture -->
-          <form name="join-alignism" method="POST" data-netlify="true" class="join-cta">
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-            />
-            <button type="submit">
-              Join
-            </button>
-          </form>
+<form
+  name="join-alignism"
+  method="POST"
+  data-netlify="true"
+  action="/thank-you"
+  class="join-cta"
+>
+  <input type="hidden" name="form-name" value="join-alignism">
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Your email"
+    required
+  />
+
+  <button type="submit">Join</button>
+</form>
+
         </div>
       </section>
 
