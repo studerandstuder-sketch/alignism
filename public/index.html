@@ -1,4 +1,4 @@
-</section>   <!-- end of HERO --><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
       padding: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Helvetica Neue", Arial, sans-serif;
-      background: #ffffff; /* keep site white */
+      background: #ffffff;
       color: #111827;
     }
     .page {
@@ -97,7 +97,6 @@
       margin: 0 auto;
     }
 
-    /* Section title underline accent */
     .section-inner h2 {
       position: relative;
       padding-bottom: 6px;
@@ -354,11 +353,6 @@
   </style>
 </head>
 <body>
-  <!-- Netlify backend form (hidden) -->
-  <form name="join-alignism" method="POST" data-netlify="true" hidden>
-    <input type="email" name="email" />
-  </form>
-
   <div class="page">
     <header>
       <div class="inner flex">
@@ -392,13 +386,13 @@
               </p>
             </div>
             <div class="hero-visual">
-              <img src="pillar-freedom.jpg" alt="Alignism – the path forward" loading="lazy" />
+              <img src="/pillar-freedom.jpg" alt="Alignism – the path forward" loading="lazy" />
             </div>
           </div>
         </div>
       </section>
 
-      <!-- JOIN THE MOVEMENT (short, light) -->
+      <!-- JOIN THE MOVEMENT -->
       <section class="section" id="join">
         <div class="section-inner">
           <div class="join-axis"></div>
@@ -409,11 +403,10 @@
             It starts with one aligned gesture a day.
           </p>
 
-          <!-- JOIN cards styled exactly like the 5 Pillars -->
           <div class="pillars join-grid">
             <div class="card">
               <div class="card-image">
-                <img src="pillar-freedom.jpg" alt="Clarity" loading="lazy" />
+                <img src="/pillar-freedom.jpg" alt="Clarity" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Clarity</h3>
@@ -425,7 +418,7 @@
 
             <div class="card">
               <div class="card-image">
-                <img src="pillar-freedom.jpg" alt="Coherence" loading="lazy" />
+                <img src="/pillar-freedom.jpg" alt="Coherence" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Coherence</h3>
@@ -437,16 +430,22 @@
           </div>
 
           <!-- Netlify email capture -->
-          <form name="join-alignism" method="POST" data-netlify="true" class="join-cta">
+          <form
+            name="join-alignism"
+            method="POST"
+            data-netlify="true"
+            action="/thank-you.html"
+            class="join-cta"
+          >
+            <input type="hidden" name="form-name" value="join-alignism" />
+
             <input
               type="email"
               name="email"
               placeholder="Your email"
               required
             />
-            <button type="submit">
-              Join
-            </button>
+            <button type="submit">Join</button>
           </form>
         </div>
       </section>
@@ -474,7 +473,7 @@
           <div class="pillars">
             <div class="card">
               <div class="card-image">
-                <img src="pillar-inner.jpg" alt="Inner Alignment" loading="lazy" />
+                <img src="/pillar-inner.jpg" alt="Inner Alignment" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Inner Alignment</h3>
@@ -487,7 +486,7 @@
 
             <div class="card">
               <div class="card-image">
-                <img src="pillar-quality.jpg" alt="Quality of Life" loading="lazy" />
+                <img src="/pillar-quality.jpg" alt="Quality of Life" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Quality of Life</h3>
@@ -500,7 +499,7 @@
 
             <div class="card">
               <div class="card-image">
-                <img src="pillar-love.jpg" alt="Lucid Love" loading="lazy" />
+                <img src="/pillar-love.jpg" alt="Lucid Love" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Lucid Love</h3>
@@ -513,7 +512,7 @@
 
             <div class="card">
               <div class="card-image">
-                <img src="pillar-tech.jpg" alt="Modern Freedom" loading="lazy" />
+                <img src="/pillar-tech.jpg" alt="Modern Freedom" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Modern Freedom</h3>
@@ -526,7 +525,7 @@
 
             <div class="card">
               <div class="card-image">
-                <img src="principles.jpg" alt="Freedom of Movement" loading="lazy" />
+                <img src="/principles.jpg" alt="Freedom of Movement" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3>Freedom of Movement</h3>
@@ -545,7 +544,7 @@
         <div class="section-inner">
           <div class="founder-layout">
             <div class="founder-photo">
-              <img src="founder.jpg" alt="Sébastien Studer – founder of Alignism" loading="lazy" />
+              <img src="/founder.jpg" alt="Sébastien Studer – founder of Alignism" loading="lazy" />
             </div>
             <div class="founder-text">
               <h2>About the Founder</h2>
@@ -581,7 +580,7 @@
           </p>
           <p style="margin-top:16px;">
             <a
-              href="ALIGNISM-Official-Guide.pdf"
+              href="/ALIGNISM-Official-Guide.pdf"
               class="guide-button"
             >
               Download the free guide (PDF)
